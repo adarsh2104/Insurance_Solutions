@@ -1,7 +1,7 @@
 from django.http import HttpResponse,Http404,JsonResponse
 from rest_framework.views import APIView
-from policy_dashboard.models import Policy,Customer
-from policy_dashboard.serializers import PolicyDetailSerializer
+from agent_dashboard.models import Policy,Customer
+from agent_dashboard.serializers import PolicyDetailSerializer
 from django.db.models import Q,Count
 from datetime import date,datetime
 import json

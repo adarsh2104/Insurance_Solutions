@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand, CommandError
-from policy_dashboard.utils.policy_data_import import PolicyDataImport 
+from agent_dashboard.utils.policy_data_import import PolicyDataImport 
 import os
 
 

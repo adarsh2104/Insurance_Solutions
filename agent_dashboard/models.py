@@ -2,7 +2,7 @@ from django.db import models
 # from .validators.field_validator import FieldValidator
 from django.conf import settings
 from django.core.validators import MaxValueValidator,MinValueValidator
-# from policy_dashboard.models import Customer,Policy
+# from agent_dashboard.models import Customer,Policy
 
 class Customer(models.Model):
     customer_id = models.AutoField(primary_key=True)

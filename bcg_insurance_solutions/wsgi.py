@@ -1,5 +1,5 @@
 """
-WSGI config for fb_search_analysis project.
+WSGI config for bcg_insurance_solutions project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "fb_search_analysis.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "bcg_insurance_solutions.settings")
 
 application = get_wsgi_application()
