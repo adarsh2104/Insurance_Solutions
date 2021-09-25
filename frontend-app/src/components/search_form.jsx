@@ -14,20 +14,24 @@ class SearchForm extends React.Component {
         super();
         this.state = {
             data: [],
+            results_length : null,
             loaded: true
         };
         this.sendQueryRequest = this.sendQueryRequest.bind(this)
     }
 
-    sendQueryRequest() {
+    sendQueryRequest(event) {
         let self = this;
         const form = document.getElementById("query_form");
-        if (form) {
-            let query = form.query.value
+        const query_type = event.target.id
+        const query = form.query.value
+        if (query_type && form) {
             if (query) {
+                const url = config.SEARCH_REQUEST + query_type+'/'+query
+                console.log('====>',url)
                 self.setState({ loaded: false });
 
-                axios.post(config.SEARCH_REQUEST + query,
+                axios.get(url,
                     {
                         headers: {
                           'Sec-Fetch-Mode': 'cors',
@@ -35,17 +39,17 @@ class SearchForm extends React.Component {
                     }
                 )
                     .then(function (json) {
-                        // console.log('==>',json)
-                        let response_data = json.data
-                        self.setState({ data: response_data.comments, review: response_data.review, query_term: query, loaded: true });
+                        console.log('==>',json.data.response_data)
+                        let response_data = json.data.response_data
+                        self.setState({ data: response_data,loaded: true ,results_length: response_data.length });
                     })
                     .catch(function (error) {
-                        alert('Search Failed !! Please try again with different Keyword');
+                        alert('Search Failed !! Please try again');
                         self.setState({ loaded: true });
                     });
 
             } else {
-                alert('Please enter a valid Search Keyword !')
+                alert('Please enter a valid Search ID !')
                 self.setState({ loaded: true });
             }
 
@@ -55,16 +59,18 @@ class SearchForm extends React.Component {
     render() {
         return (
             <div>
+                <h1>Please Make a Search Request</h1>
                 <div>
                     <form id='query_form' >
-                        <Label className="search_bar">Search Query: <Input name="query" type='text' placeholder="tesla" /></Label>
-                        <Button onClick={this.sendQueryRequest}>  Send Request  </Button>
+                        <Label className="search_bar"> Search Policy: <Input name="query" type='number' placeholder="Eg: 420" /></Label>
+                        <Button id='search_by_policy' onClick={this.sendQueryRequest}>  By Policy ID  </Button>
+                        <Button id='search_by_customer' onClick={this.sendQueryRequest}>  By Customer ID  </Button>
 
                     </form>
 
                 </div>
                 <Loader loaded={this.state.loaded} >
-                    <SearchResult comments={this.state.data} review={this.state.review} query_term={this.state.query_term} />
+                    <SearchResult policy_data={this.state.data} results_length={this.state.results_length} />
                 </Loader>
 
             </div>

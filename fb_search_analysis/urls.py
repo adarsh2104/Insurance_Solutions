@@ -19,7 +19,7 @@ from django.urls import path,include
 
 urlpatterns = [
 
-    path('api/',include('request_client.urls')),
+    path('api/search/',include('policy_dashboard.urls')),
     path('',include('request_client.urls')),
 
 

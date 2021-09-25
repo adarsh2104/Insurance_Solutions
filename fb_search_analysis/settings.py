@@ -48,7 +48,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'request_client'
+    'request_client',
+    'policy_dashboard'
 ]
 
 MIDDLEWARE = [
@@ -62,6 +63,7 @@ MIDDLEWARE = [
 
 ]
 
+MAX_PREMIUM = 100
 
 ROOT_URLCONF = 'fb_search_analysis.urls'
 
@@ -108,7 +110,7 @@ WSGI_APPLICATION = 'fb_search_analysis.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'hack',
+        'NAME': 'BCG',
         'USER':'root',
         'PASSWORD':'root',
         'HOST':'127.0.0.1',

@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from rest_framework.views import APIView
 
-from request_client.utils.facebook_request_client import RequestClient
+# from request_client.utils.facebook_request_client import RequestClient
 from request_client.models import SearchKeyword, PostComments
 from request_client.utils.sentiment_analyzer import main as Sentiment_analyzer
 from .serializer import SearchKeywordSerializer
@@ -28,7 +28,8 @@ class SearchView(APIView):
         
         try:
             if query is not '':
-                comments_for_query = RequestClient().main(search_keyword=query)
+                comments_for_query = '' 
+                # RequestClient().main(search_keyword=query)
 
                 if comments_for_query.get('saved') is True:
                     comment_obj = PostComments.objects.filter(fk_keyword__keyword=query)
