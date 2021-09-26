@@ -3,6 +3,7 @@ import Dashboard from './components/dashboard'
 import './static/css/common.css';
 
 
+
 class App extends React.Component {
   constructor() {
     super();
@@ -21,7 +22,8 @@ class App extends React.Component {
   render() {
     return (
         <div className="application">
-          <h1><center>Policy Management Dashboard</center></h1>
+          
+          <h1><center>Welcome to Policy Management Dashboard</center></h1>
           <Dashboard selected_mode={this.state.selected_mode} setSelectedMode={this.setSelectedMode} />
         </div>
       );
