@@ -3,7 +3,7 @@
 A REST API based applications with following salient features: (Visuals)[https://github.com/adarsh2104/Insurance_Solutions/tree/master/Visuals]
 
 ### [Frontend](https://github.com/adarsh2104/Insurance_Solutions/tree/master/frontend-app): React.JS 
-##### [Frontend Template](https://coreui.io/react/)
+##### [Frontend Template](https://coreui.io/react/) Open source Core-ui admin dashboard template used as place holders in UI.
 
 1. Home Page:
   * Minimalistic Home page with Buttons for navigating to Policy Search Page and Monthly Purchase Data Page.
