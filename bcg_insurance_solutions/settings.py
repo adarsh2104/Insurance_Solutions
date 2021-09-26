@@ -70,7 +70,7 @@ MIDDLEWARE = [
 
 ]
 
-MAX_ALLOWED_PREMIUM = 100
+MAX_ALLOWED_PREMIUM = 1000000
 
 ROOT_URLCONF = 'bcg_insurance_solutions.urls'
 

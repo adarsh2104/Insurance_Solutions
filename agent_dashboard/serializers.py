@@ -6,15 +6,7 @@ from django.conf import settings
 
 
 class PolicyDetailSerializer(serializers.ModelSerializer):
-    # purchase_date = serializers.DateField(format="%Y-%m-%d", required=False, read_only=True)
     purchase_date = serializers.DateField(format="%d-%m-%Y", required=False, read_only=True)
-    
-    # def validate(self, data):
-    #     """
-    #     Check that the start is before the stop.
-    #     """
-    #     FieldValidator.validate_premium(data['premium'])
-    #     return data
     
     class Meta:
         model = Policy

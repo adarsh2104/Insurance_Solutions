@@ -13,26 +13,31 @@ class PolicyDataImport:
 
 
     def _from_csv(self,csv_file_path:str):
-        data_frame = pd.read_csv(csv_file_path)
-        new_customers_dataset = set(data_frame['Customer_id'].unique())
-        new_policy_dataset = set(data_frame['Policy_id'].unique())
+        try:
+            data_frame = pd.read_csv(csv_file_path)
+            new_customers_dataset = set(data_frame['Customer_id'].unique())
+            new_policy_dataset = set(data_frame['Policy_id'].unique())
 
-        data_frame.rename(columns = {"Date of Purchase": "purchase_date"},inplace=True)
-        data_frame['purchase_date'] = pd.to_datetime(data_frame['purchase_date'])
+            data_frame.rename(columns = {"Date of Purchase": "purchase_date"},inplace=True)
+            data_frame['purchase_date'] = pd.to_datetime(data_frame['purchase_date'])
+            
+            filtered_new_customers_dataset = self.check_and_remove_existing_objects(Customer,new_customers_dataset)
+            filtered_new_policy_dataset = self.check_and_remove_existing_objects(Policy,new_policy_dataset)
+
+            insert_data = []
+            for row in data_frame.itertuples():
+                if row.Policy_id in filtered_new_policy_dataset: 
+                    insert_data.append(tuple([row.Policy_id,row.purchase_date,row.Customer_id,row.Premium,row.Customer_Region]))
+
+            insert_customer_query = "INSERT INTO customer (customer_id) Values (%s)"
+            insert_policy_query = 'INSERT INTO policy (policy_id,purchase_date,fk_customer_id,premium,region) VALUES(%s, %s, %s, %s, %s)' 
+            
+            self.execute_insert_query(insert_customer_query,filtered_new_customers_dataset,many=True)
+            self.execute_insert_query(insert_policy_query,insert_data,many=True)
+            print('Data import completed succuessfully !')
         
-        filtered_new_customers_dataset = self.check_and_remove_existing_objects(Customer,new_customers_dataset)
-        filtered_new_policy_dataset = self.check_and_remove_existing_objects(Policy,new_policy_dataset)
-
-        insert_data = []
-        for row in data_frame.itertuples():
-            if row.Policy_id in filtered_new_policy_dataset: 
-                insert_data.append(tuple([row.Policy_id,row.purchase_date,row.Customer_id,row.Premium,row.Customer_Region]))
-
-        insert_customer_query = "INSERT INTO customer (customer_id) Values (%s)"
-        insert_policy_query = 'INSERT INTO policy (policy_id,purchase_date,fk_customer_id,premium,region) VALUES(%s, %s, %s, %s, %s)' 
-        self.execute_insert_query(insert_customer_query,filtered_new_customers_dataset,many=True)
-        self.execute_insert_query(insert_policy_query,insert_data,many=True)
-
+        except Exception as e:
+            print('Error in data import',e)
 
     def check_and_remove_existing_objects(self,model,new_data_set):
         existing_objects_dataset = model.objects.only('pk').values_list('pk',flat=True)

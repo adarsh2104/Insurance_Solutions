@@ -53,8 +53,6 @@ class SearchPolicyView(APIView):
 
 
 class MonthlyDataByRegion(APIView):
-    # add function to get all district regions
-    
     def post(self, request):
         selected_region = request.POST['selected_region']
         
@@ -63,13 +61,7 @@ class MonthlyDataByRegion(APIView):
         
         response = self.add_missing_month_data_to_response(month_wise_region_data)
         return JsonResponse({'response': response})
-        # all_regions = Policy.objects.only('region').distinct().value
 
-        # if isinstance(monthly_data_date,str):
-        #     # monthly_data_date = datetime.strptime(monthly_data_date,'%Y-%m')
-        #     date_part =  monthly_data_date.split('-')
-        # policy_objects = Policy.objects.filter(region=)
-    
     def add_missing_month_data_to_response(self, queryset):
         available_months = queryset.values_list('month', flat=True)
         available_months_counts = list(queryset.values_list('monthly_count', flat=True))
