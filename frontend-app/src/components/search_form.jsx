@@ -35,7 +35,7 @@ class SearchForm extends React.Component {
                         self.setState({ data: response_data, loaded: true, results_length: response_data.length });
                     })
                     .catch(function (error) {
-                        alert('Search Failed !! Please try again');
+                        alert('Could Not find a Matching ID !! Please check !');
                         self.setState({ loaded: true });
                     });
 
