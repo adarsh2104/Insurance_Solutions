@@ -31,3 +31,49 @@
 [26/Sep/2021 15:20:14] DEBUG [agent_dashboard.views:85] {'fk_customer': 840}
 [26/Sep/2021 15:20:14] DEBUG [agent_dashboard.views:95] == Policy Search Query ==
 [26/Sep/2021 15:20:14] DEBUG [agent_dashboard.views:96] {'fk_customer': 840}
+[26/Sep/2021 15:52:02] DEBUG [agent_dashboard.views:84] == Search Query ==
+[26/Sep/2021 15:52:02] DEBUG [agent_dashboard.views:85] {'policy_id': 420}
+[26/Sep/2021 15:52:02] DEBUG [agent_dashboard.views:95] == Policy Search Query ==
+[26/Sep/2021 15:52:02] DEBUG [agent_dashboard.views:96] {'policy_id': 420}
+[26/Sep/2021 15:52:05] DEBUG [agent_dashboard.views:84] == Search Query ==
+[26/Sep/2021 15:52:05] DEBUG [agent_dashboard.views:85] {'fk_customer': 420}
+[26/Sep/2021 15:52:05] DEBUG [agent_dashboard.views:95] == Policy Search Query ==
+[26/Sep/2021 15:52:05] DEBUG [agent_dashboard.views:96] {'fk_customer': 420}
+[26/Sep/2021 15:52:22] DEBUG [agent_dashboard.views:118] == request.POST ==
+[26/Sep/2021 15:52:22] DEBUG [agent_dashboard.views:119] <QueryDict: {'selected_region': ['east']}>
+[26/Sep/2021 15:52:25] DEBUG [agent_dashboard.views:118] == request.POST ==
+[26/Sep/2021 15:52:25] DEBUG [agent_dashboard.views:119] <QueryDict: {'selected_region': ['west']}>
+[26/Sep/2021 15:52:29] DEBUG [agent_dashboard.views:118] == request.POST ==
+[26/Sep/2021 15:52:29] DEBUG [agent_dashboard.views:119] <QueryDict: {'selected_region': ['north']}>
+[26/Sep/2021 15:52:32] DEBUG [agent_dashboard.views:118] == request.POST ==
+[26/Sep/2021 15:52:32] DEBUG [agent_dashboard.views:119] <QueryDict: {'selected_region': ['south']}>
+[26/Sep/2021 15:54:39] DEBUG [agent_dashboard.views:84] == Search Query ==
+[26/Sep/2021 15:54:39] DEBUG [agent_dashboard.views:85] {'policy_id': 420}
+[26/Sep/2021 15:54:39] DEBUG [agent_dashboard.views:95] == Policy Search Query ==
+[26/Sep/2021 15:54:39] DEBUG [agent_dashboard.views:96] {'policy_id': 420}
+[26/Sep/2021 15:55:10] DEBUG [agent_dashboard.views:84] == Search Query ==
+[26/Sep/2021 15:55:10] DEBUG [agent_dashboard.views:85] {'fk_customer': 420}
+[26/Sep/2021 15:55:10] DEBUG [agent_dashboard.views:95] == Policy Search Query ==
+[26/Sep/2021 15:55:10] DEBUG [agent_dashboard.views:96] {'fk_customer': 420}
+[26/Sep/2021 15:56:32] DEBUG [agent_dashboard.views:26] == request.POST ==
+[26/Sep/2021 15:56:32] DEBUG [agent_dashboard.views:27] <QueryDict: {'premium': ['99999'], 'policy_id': ['12607'], 'fk_customer': ['420']}>
+[26/Sep/2021 15:57:13] DEBUG [agent_dashboard.views:26] == request.POST ==
+[26/Sep/2021 15:57:13] DEBUG [agent_dashboard.views:27] <QueryDict: {'premium': ['100000000'], 'policy_id': ['12617'], 'fk_customer': ['420']}>
+[26/Sep/2021 15:57:13] DEBUG [agent_dashboard.views:48] == PolicyDetail Serializer Error==
+[26/Sep/2021 15:57:13] DEBUG [agent_dashboard.views:49] {'premium': [ErrorDetail(string='Ensure that there are no more than 8 digits before the decimal point.', code='max_whole_digits')]}
+[26/Sep/2021 15:57:21] DEBUG [agent_dashboard.views:26] == request.POST ==
+[26/Sep/2021 15:57:21] DEBUG [agent_dashboard.views:27] <QueryDict: {'premium': ['1000000'], 'policy_id': ['12617'], 'fk_customer': ['420']}>
+[26/Sep/2021 15:57:28] DEBUG [agent_dashboard.views:26] == request.POST ==
+[26/Sep/2021 15:57:28] DEBUG [agent_dashboard.views:27] <QueryDict: {'premium': ['9999999'], 'policy_id': ['12599'], 'fk_customer': ['420']}>
+[26/Sep/2021 15:57:28] DEBUG [agent_dashboard.views:48] == PolicyDetail Serializer Error==
+[26/Sep/2021 15:57:28] DEBUG [agent_dashboard.views:49] {'premium': [ErrorDetail(string='Entered value is greater than Max Allowed \n-Max Allowed Premium  = 1000000 USD \n-Entered Premium            = 9999999.00 USD', code='invalid')]}
+[26/Sep/2021 16:00:25] DEBUG [agent_dashboard.views:118] == request.POST ==
+[26/Sep/2021 16:00:25] DEBUG [agent_dashboard.views:119] <QueryDict: {'selected_region': ['west']}>
+[26/Sep/2021 16:00:29] DEBUG [agent_dashboard.views:118] == request.POST ==
+[26/Sep/2021 16:00:29] DEBUG [agent_dashboard.views:119] <QueryDict: {'selected_region': ['east']}>
+[26/Sep/2021 16:00:31] DEBUG [agent_dashboard.views:118] == request.POST ==
+[26/Sep/2021 16:00:31] DEBUG [agent_dashboard.views:119] <QueryDict: {'selected_region': ['south']}>
+[26/Sep/2021 16:00:34] DEBUG [agent_dashboard.views:118] == request.POST ==
+[26/Sep/2021 16:00:34] DEBUG [agent_dashboard.views:119] <QueryDict: {'selected_region': ['north']}>
+[26/Sep/2021 16:05:49] DEBUG [agent_dashboard.views:102] == Match Not Found Request ID==
+[26/Sep/2021 16:05:49] DEBUG [agent_dashboard.views:103] 0
