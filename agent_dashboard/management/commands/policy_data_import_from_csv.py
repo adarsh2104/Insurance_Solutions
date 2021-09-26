@@ -4,6 +4,11 @@ import os
 
 
 class Command(BaseCommand):
+    '''
+    Management command for performing data import through CSV file
+    Supported Models : Policy , Customer
+    '''
+    
     help = 'Usage: python manage.py policy_data_import_from_csv --file=csv_file_path'
 
     def add_arguments(self, parser):
