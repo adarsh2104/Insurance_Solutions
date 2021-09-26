@@ -82,7 +82,7 @@ class SearchForm extends React.Component {
                                         <td className=" performance_col">{row.purchase_date}</td>
                                         <td className=" performance_col" id={"read_policy_" + row.policy_id}>{row.premium}
                                             <span style={{ margin: '9px', marginLeft: '49px', position: 'relative', right: '-100px' }}>
-                                                <Input id={"new_premium_" + row.policy_id} type='text' placeholder='New Premium' style={{ width: '20%' }} hidden />
+                                                <Input id={"new_premium_" + row.policy_id} type='text' placeholder='New Premium' style={{ width: '63%' }} hidden />
                                                 <Button id={'edit_policy_' + row.policy_id} onClick={this.editPremium}>  Click To Edit </Button>
                                             </span>
                                         </td>
