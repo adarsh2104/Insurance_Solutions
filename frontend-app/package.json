@@ -1,17 +1,17 @@
 {
-  "name": "@coreui/coreui-free-react-admin-template",
+  "name": "insurance-solutions-webapp",
   "version": "3.2.1",
-  "description": "CoreUI React Open Source Bootstrap 4 Admin Template",
+  "description": "",
   "author": {
-    "name": "CoreUI",
-    "url": "https://coreui.io",
-    "github": "https://github.com/coreui",
-    "twitter": "https://twitter.com/core_ui"
+    "name": "",
+    "url": "https://sample.io",
+    "github": "https://github.com/",
+    "twitter": "https://twitter.com/"
   },
   "contributors": [
     {
       "name": "CoreUI Team",
-      "url": "https://github.com/orgs/coreui/people"
+      "url": "https://github.com/"
     }
   ],
   "homepage": ".",
