@@ -30,12 +30,8 @@ class SearchForm extends React.Component {
                 post_data.append('policy_id', edit_policy_id)
                 post_data.append('fk_customer', costomer_id.textContent)
                 const url = config.POLICY_EDIT
-                axios.post(url, post_data,
-                    {
-                        headers: {
-                            'Sec-Fetch-Mode': 'cors',
-                        }
-                    }
+                axios.post(url, post_data
+                    
                 )
                     .then(function (json) {
                         let response_data = json.data

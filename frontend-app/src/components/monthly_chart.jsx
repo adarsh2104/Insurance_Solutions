@@ -23,20 +23,12 @@ class MonthlyChart extends Component {
             let post_data = new FormData();
             post_data.append('selected_region', selected_region)
             axios.post(url, post_data,
-                {
-                    headers: {
-                        'Sec-Fetch-Mode': 'cors',
-                    }
-                }
             )
                 .then(function (json) {
-                    console.log('==>', json.data.response)
+                    // console.log('==>', json.data.response)
                     if (json.data) {
                         let reponse = json.data.response
                         self.setState({ chart_data: reponse })
-
-
-
                     }
 
                 })

@@ -28,12 +28,7 @@ class SearchForm extends React.Component {
                 const url = config.SEARCH_REQUEST + query_type + '/' + query
                 self.setState({ loaded: false });
 
-                axios.get(url,
-                    {
-                        headers: {
-                            'Sec-Fetch-Mode': 'cors',
-                        }
-                    }
+                axios.get(url
                 )
                     .then(function (json) {
                         let response_data = json.data.response_data
