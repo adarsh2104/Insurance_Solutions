@@ -8,7 +8,7 @@ class Dashboard extends React.Component {
     if (this.props.selected_mode == null){
       return (
         <Container>
-        <h1> Customer Home </h1>
+        <h1> Home Page</h1>
         <Button name='selected_mode' value='search' onClick={this.props.setSelectedMode}>Search Policy</Button>
         <Button name='selected_mode' value='monthly_data' onClick={this.props.setSelectedMode}>Check Monthly Policy Purchase Data</Button>
         </Container>

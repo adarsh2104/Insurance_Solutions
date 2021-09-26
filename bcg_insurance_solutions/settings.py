@@ -28,15 +28,21 @@ DEBUG = True
 ALLOWED_HOSTS = ['http://localhost:3001/', 'localhost:3001/',
                  'localhost:3000/', '127.0.0.1', 'localhost']
 
-CORS_ORIGIN_WHITELIST = [
-    'http://localhost:3000',
-    'http://localhost:3001',
-    'http://127.0.0.1',
-]
+# CORS_ORIGIN_WHITELIST = [
+#     'http://localhost:3000',
+#     'http://localhost:3001',
+#     'http://127.0.0.1',
+    
+# ]
+
+CORS_ORIGIN_WHITELIST = (
+    		'http://localhost:3000',
+    		'http://localhost:3001',
+		    'http://127.0.0.1'
+		)
 
 CORS_ORIGIN_ALLOW_ALL = True
 
-DRIVER_PATH = '/usr/lib/chromium-browser/chromedriver'
 
 # Application definition
 
@@ -55,15 +61,16 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
+    
 
 ]
 
-MAX_PREMIUM = 100
+MAX_ALLOWED_PREMIUM = 100
 
 ROOT_URLCONF = 'bcg_insurance_solutions.urls'
 
