@@ -1,0 +1,33 @@
+
+[26/Sep/2021 15:18:59] DEBUG [agent_dashboard.views:84] == Search Query ==
+[26/Sep/2021 15:18:59] DEBUG [agent_dashboard.views:85] {'policy_id': 420}
+[26/Sep/2021 15:18:59] DEBUG [agent_dashboard.views:95] == Policy Search Query ==
+[26/Sep/2021 15:18:59] DEBUG [agent_dashboard.views:96] {'policy_id': 420}
+[26/Sep/2021 15:19:01] DEBUG [agent_dashboard.views:84] == Search Query ==
+[26/Sep/2021 15:19:01] DEBUG [agent_dashboard.views:85] {'fk_customer': 420}
+[26/Sep/2021 15:19:01] DEBUG [agent_dashboard.views:95] == Policy Search Query ==
+[26/Sep/2021 15:19:01] DEBUG [agent_dashboard.views:96] {'fk_customer': 420}
+[26/Sep/2021 15:19:07] DEBUG [agent_dashboard.views:26] == request.POST ==
+[26/Sep/2021 15:19:07] DEBUG [agent_dashboard.views:27] <QueryDict: {'premium': ['1000'], 'policy_id': ['12607'], 'fk_customer': ['420']}>
+[26/Sep/2021 15:19:13] DEBUG [agent_dashboard.views:118] == request.POST ==
+[26/Sep/2021 15:19:13] DEBUG [agent_dashboard.views:119] <QueryDict: {'selected_region': ['east']}>
+[26/Sep/2021 15:19:15] DEBUG [agent_dashboard.views:118] == request.POST ==
+[26/Sep/2021 15:19:15] DEBUG [agent_dashboard.views:119] <QueryDict: {'selected_region': ['north']}>
+[26/Sep/2021 15:19:19] DEBUG [agent_dashboard.views:118] == request.POST ==
+[26/Sep/2021 15:19:19] DEBUG [agent_dashboard.views:119] <QueryDict: {'selected_region': ['south']}>
+[26/Sep/2021 15:19:52] DEBUG [agent_dashboard.views:118] == request.POST ==
+[26/Sep/2021 15:19:52] DEBUG [agent_dashboard.views:119] <QueryDict: {'selected_region': ['south']}>
+[26/Sep/2021 15:19:54] DEBUG [agent_dashboard.views:118] == request.POST ==
+[26/Sep/2021 15:19:54] DEBUG [agent_dashboard.views:119] <QueryDict: {'selected_region': ['east']}>
+[26/Sep/2021 15:19:57] DEBUG [agent_dashboard.views:118] == request.POST ==
+[26/Sep/2021 15:19:57] DEBUG [agent_dashboard.views:119] <QueryDict: {'selected_region': ['west']}>
+[26/Sep/2021 15:20:03] DEBUG [agent_dashboard.views:84] == Search Query ==
+[26/Sep/2021 15:20:03] DEBUG [agent_dashboard.views:85] {'policy_id': 1}
+[26/Sep/2021 15:20:03] DEBUG [agent_dashboard.views:95] == Policy Search Query ==
+[26/Sep/2021 15:20:03] DEBUG [agent_dashboard.views:96] {'policy_id': 1}
+[26/Sep/2021 15:20:07] DEBUG [agent_dashboard.views:102] == Match Not Found Request ID==
+[26/Sep/2021 15:20:07] DEBUG [agent_dashboard.views:103] 0
+[26/Sep/2021 15:20:14] DEBUG [agent_dashboard.views:84] == Search Query ==
+[26/Sep/2021 15:20:14] DEBUG [agent_dashboard.views:85] {'fk_customer': 840}
+[26/Sep/2021 15:20:14] DEBUG [agent_dashboard.views:95] == Policy Search Query ==
+[26/Sep/2021 15:20:14] DEBUG [agent_dashboard.views:96] {'fk_customer': 840}
