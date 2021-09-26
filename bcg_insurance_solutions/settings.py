@@ -70,7 +70,8 @@ MIDDLEWARE = [
 
 ]
 
-MAX_ALLOWED_PREMIUM = 1000000
+# 1 Million USD
+MAX_ALLOWED_PREMIUM = 1000000 
 
 ROOT_URLCONF = 'bcg_insurance_solutions.urls'
 
@@ -111,7 +112,7 @@ WSGI_APPLICATION = 'bcg_insurance_solutions.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'BCG',
+        'NAME': 'BCG_Insurance_Data',
         'USER': 'root',
         'PASSWORD': 'root',
         'HOST': '127.0.0.1',
