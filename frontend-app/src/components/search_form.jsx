@@ -1,5 +1,3 @@
-// import React from 'react';
-// import ReactDOM from 'react-dom';
 import React from 'react';
 import { Input, Button, Label } from 'reactstrap';
 import axios from 'axios';
@@ -14,7 +12,7 @@ class SearchForm extends React.Component {
         super();
         this.state = {
             data: [],
-            results_length : null,
+            results_length: null,
             loaded: true
         };
         this.sendQueryRequest = this.sendQueryRequest.bind(this)
@@ -27,21 +25,19 @@ class SearchForm extends React.Component {
         const query = form.query.value
         if (query_type && form) {
             if (query) {
-                const url = config.SEARCH_REQUEST + query_type+'/'+query
-                console.log('====>',url)
+                const url = config.SEARCH_REQUEST + query_type + '/' + query
                 self.setState({ loaded: false });
 
                 axios.get(url,
                     {
                         headers: {
-                          'Sec-Fetch-Mode': 'cors',
+                            'Sec-Fetch-Mode': 'cors',
                         }
                     }
                 )
                     .then(function (json) {
-                        console.log('==>',json.data.response_data)
                         let response_data = json.data.response_data
-                        self.setState({ data: response_data,loaded: true ,results_length: response_data.length });
+                        self.setState({ data: response_data, loaded: true, results_length: response_data.length });
                     })
                     .catch(function (error) {
                         alert('Search Failed !! Please try again');
